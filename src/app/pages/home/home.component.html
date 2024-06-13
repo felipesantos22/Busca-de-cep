@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="cover">
+    <h1>Digite seu Cep</h1>
+    <form class="flex-form" (submit)="search()">
+      <label for="from">
+        <i class="ion-location"></i>
+      </label>
+      <input
+        type="search"
+        placeholder="CEP"
+        [(ngModel)]="cep"
+        name="cep"
+        required
+      />
+      <input type="submit" value="Search" />
+    </form>
+    <div id="madeby">
+      <span> By <a href="" target="_blank">Felipe Santos</a> </span>
+    </div>
+    <div *ngIf="cepData" class="address">
+      <p><strong>Logradouro:</strong> {{ cepData.logradouro }}</p>
+      <p><strong>Bairro:</strong> {{ cepData.bairro }}</p>
+      <p><strong>Localidade:</strong> {{ cepData.localidade }}</p>
+      <p><strong>UF:</strong> {{ cepData.uf }}</p>
+    </div>
+  </div>
+</div>
